@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zhangbolun.jinjidebishe.TeacherAddNotification">
+
+
+    <TextView
+        android:id="@+id/addnotification_title"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="标题"
+        android:textSize="24sp"
+        android:layout_margin="10dp"/>
+    <EditText
+        android:id="@+id/addnotification_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="通知内容"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/addnotification_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:lines="7"
+        android:gravity="start|top" />
+    <Spinner
+        android:id="@+id/addnotification_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp" />
+    <Button
+        android:id="@+id/addnotification_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="点击提交"
+        android:layout_margin="10dp"/>
+
+
+</LinearLayout>
