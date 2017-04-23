@@ -2,6 +2,8 @@ package teacher.checkon;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -19,6 +21,7 @@ import com.example.zhangbolun.jinjidebishe.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import teacher.notification.TeacherNotificationReceiverFragment1;
 
 /**
  * Created by zhangbolun on 2017/4/20.
@@ -41,6 +44,7 @@ public class TeacherCheckOnFragment extends Fragment{
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeAsUpIndicator(R.mipmap.iconmonstr_menu_2_16);
         }
+        replaceFragment(new TeacherCheckOnReceiverFragment());
         bottomNavigationBar.setMode(BottomNavigationBar.MODE_SHIFTING);
         bottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_RIPPLE);
         bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.iconmonstr_pen_3_32,"今日签到概况").setInActiveColor(R.color.colorPrimaryDark).setActiveColor("#00629B"))
@@ -53,8 +57,10 @@ public class TeacherCheckOnFragment extends Fragment{
             public void onTabSelected(int position) {
                 switch (position){
                     case 1:
+                        replaceFragment(new TeacherCheckOnReceiverFragment1());
                         break;
                     case 0:
+                        replaceFragment(new TeacherCheckOnReceiverFragment());
                         break;
                 }
             }
@@ -81,5 +87,12 @@ public class TeacherCheckOnFragment extends Fragment{
                 break;
         }
         return false;
+    }
+
+    public void replaceFragment(Fragment fragment){
+        FragmentManager fragmentManager=getChildFragmentManager();
+        FragmentTransaction transaction=fragmentManager.beginTransaction();
+        transaction.replace(R.id.fragment_teacher_checkon_container,fragment);
+        transaction.commit();
     }
 }
