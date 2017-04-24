@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.zhangbolun.jinjidebishe.R;
 
+import java.sql.Time;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -20,21 +21,29 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class CheckOnAdapter extends RecyclerView.Adapter<CheckOnAdapter.ViewHolder> {
     private Context mContext;
-    private List<CheckOn> mCheckOnList;
+    private List<CheckOnDetail> mCheckOnList;
     static class ViewHolder extends RecyclerView.ViewHolder{
         CardView cardView;
         TextView id;
         TextView name;
+        TextView absence;
+        TextView intime;
+        TextView outtime;
+        TextView reason;
 
         public ViewHolder(View view){
             super(view);
             cardView=(CardView)view;
             id=(TextView)view.findViewById(R.id.checkon_item_id);
             name=(TextView)view.findViewById(R.id.checkon_item_name);
+            absence=(TextView)view.findViewById(R.id.checkon_item_absence);
+            intime=(TextView)view.findViewById(R.id.checkon_item_intime);
+            outtime=(TextView)view.findViewById(R.id.checkon_item_outtime);
+            reason=(TextView)view.findViewById(R.id.checkon_item_reason);
         }
     }
 
-    public CheckOnAdapter(List<CheckOn> checkOnList){
+    public CheckOnAdapter(List<CheckOnDetail> checkOnList){
         mCheckOnList= checkOnList;
     }
 
@@ -48,9 +57,25 @@ public class CheckOnAdapter extends RecyclerView.Adapter<CheckOnAdapter.ViewHold
     }
 
     public void onBindViewHolder(ViewHolder holder,int position){
-        CheckOn checkOn=mCheckOnList.get(position);
+        CheckOnDetail checkOn=mCheckOnList.get(position);
         holder.id.setText(checkOn.getId());
         holder.name.setText(checkOn.getName());
+        if(checkOn.getAbsence().equals("0")){
+            //学生到校上课
+            holder.absence.setText("学生到校上课");
+            holder.intime.setVisibility(View.VISIBLE);
+            holder.outtime.setVisibility(View.VISIBLE);
+            holder.intime.setText(checkOn.getIntime());
+            holder.outtime.setText(checkOn.getOuttime());
+            holder.reason.setVisibility(View.GONE);
+        }else if(checkOn.getAbsence().equals("1")){
+            //学生未到校
+            holder.absence.setText("学生未到校上课");
+            holder.intime.setVisibility(View.GONE);
+            holder.outtime.setVisibility(View.GONE);
+            holder.reason.setVisibility(View.VISIBLE);
+            holder.reason.setText("请假信息："+"\r\n     "+checkOn.getReason());
+        }
     }
 
     public int getItemCount(){

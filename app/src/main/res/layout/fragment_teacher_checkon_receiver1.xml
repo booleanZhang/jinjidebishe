@@ -13,7 +13,8 @@
     <Button
         android:id="@+id/fragmentteacher_checkon_receiver1_btn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="点击获取当日签到信息"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/fragmentteacher_checkon_receiver1_rv"
