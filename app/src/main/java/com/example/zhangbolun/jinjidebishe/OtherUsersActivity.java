@@ -8,35 +8,37 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
-import teacher.notification.TeacherNotificationFragment;
-import teacher.checkon.TeacherCheckOnFragment;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
-public class TeacherActivity extends AppCompatActivity{
-    private String TAG="TeacherActiviy";
-    private NavigationView mNavigationView;
-
+public class OtherUsersActivity extends AppCompatActivity {
+    @BindView(R.id.otheruser_nav_view)NavigationView mNavigationView;
+    private String TAG="OtheruserActivity";
     public String currentUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher);
+        setContentView(R.layout.activity_other_users);
+        ButterKnife.bind(this);
         Intent intent=getIntent();
         currentUser=intent.getStringExtra("currentUser");
-        replaceFragment(new TeacherNotificationFragment());
-        mNavigationView=(NavigationView)findViewById(R.id.teacher_nav_view);
+        Log.d(TAG, currentUser);
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch(item.getItemId()){
-                    case R.id.teacher_notification:
-                        replaceFragment(new TeacherNotificationFragment());
-                        break;
-                    case R.id.teacher_checkon:
-                        replaceFragment(new TeacherCheckOnFragment());
-                        break;
+                switch (item.getItemId()){
+                    case R.id.otheruser_notification:
 
+                        break;
+                    case R.id.otheruser_checkon:
+                        Log.d(TAG, "checkon");
+                        break;
+                    default:
+                        break;
                 }
                 return false;
             }
@@ -44,10 +46,11 @@ public class TeacherActivity extends AppCompatActivity{
     }
 
     private void replaceFragment(Fragment fragment){
-        FragmentManager fragmentMananger=getSupportFragmentManager();
-        FragmentTransaction transaction=fragmentMananger.beginTransaction();
+        FragmentManager fragmentManager=getSupportFragmentManager();
+        FragmentTransaction transaction=fragmentManager.beginTransaction();
         transaction.replace(R.id.activity_otheruser_framelayout,fragment);
         transaction.commit();
+
     }
 
     public String getCurrentUser(){

@@ -36,7 +36,7 @@ public class TeacherNotificationFragment extends Fragment {
 //        Log.d(TAG, teacherActivity.getCurrentUser());
         setHasOptionsMenu(true);
         Toolbar toolbar=(Toolbar)view.findViewById(R.id.fragment_teacher_notification_toolbar);
-        toolbar.setTitle("发送通知/作业/缴费信息");
+        toolbar.setTitle("通知/作业/缴费信息");
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
         ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
         if (actionBar != null) {

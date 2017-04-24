@@ -1,19 +1,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/teacher_notification"
-            android:title="通知/作业/缴费信息"/>
+            android:id="@+id/otheruser_notification"
+            android:title="通知/作业/缴费信息s"/>
         <item
-            android:id="@+id/teacher_checkon"
+            android:id="@+id/otheruser_checkon"
             android:title="签到"/>
         <item
-            android:id="@+id/teacher_nav_item3"
+            android:id="@+id/otheruser_nav_item3"
             android:title="item3"/>
         <item
-            android:id="@+id/teacher_nav_item4"
+            android:id="@+id/otheruser_nav_item4"
             android:title="item4"/>
         <item
-            android:id="@+id/teacher_nav_item5"
+            android:id="@+id/otheruser_nav_item5"
             android:title="item5"/>
     </group>
 </menu>

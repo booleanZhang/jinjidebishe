@@ -18,6 +18,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
+import com.example.zhangbolun.jinjidebishe.OtherUsersActivity;
 import com.example.zhangbolun.jinjidebishe.R;
 import com.example.zhangbolun.jinjidebishe.TeacherActivity;
 import com.google.gson.Gson;
@@ -175,8 +176,18 @@ public class LoginFragment extends Fragment {
                             getActivity().finish();
                             break;
                         case "student":
+                            mProgressDialog.dismiss();
+                            Intent intentOtherUser=new Intent(getActivity(), OtherUsersActivity.class);
+                            intentOtherUser.putExtra("currentUser",currentUser.getCurrent_id());
+                            startActivity(intentOtherUser);
+                            getActivity().finish();
                             break;
                         case "parent":
+                            mProgressDialog.dismiss();
+                            Intent intentOtherUsers=new Intent(getActivity(), OtherUsersActivity.class);
+                            intentOtherUsers.putExtra("currentUser",currentUser.getCurrent_id());
+                            startActivity(intentOtherUsers);
+                            getActivity().finish();
                             break;
                         default:
                             break;
