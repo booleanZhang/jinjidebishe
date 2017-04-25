@@ -13,6 +13,7 @@ import android.view.MenuItem;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import otheruser.notification.OtheruserNotificationFragment;
 
 public class OtherUsersActivity extends AppCompatActivity {
     @BindView(R.id.otheruser_nav_view)NavigationView mNavigationView;
@@ -32,7 +33,7 @@ public class OtherUsersActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.otheruser_notification:
-
+                        replaceFragment(new OtheruserNotificationFragment());
                         break;
                     case R.id.otheruser_checkon:
                         Log.d(TAG, "checkon");
@@ -43,6 +44,7 @@ public class OtherUsersActivity extends AppCompatActivity {
                 return false;
             }
         });
+        replaceFragment(new OtheruserNotificationFragment());
     }
 
     private void replaceFragment(Fragment fragment){

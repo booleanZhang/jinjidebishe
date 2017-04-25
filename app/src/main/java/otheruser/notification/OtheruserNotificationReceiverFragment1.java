@@ -24,6 +24,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import teacher.notification.*;
 
 import static login.LoginFragment.currentUrl;
 
@@ -31,18 +32,18 @@ import static login.LoginFragment.currentUrl;
  * Created by zhangbolun on 2017/4/25.
  */
 
-public class OtheruserNotificationReceiverFragment extends Fragment {
-    @BindView(R.id.fragmentotheruser_notification_receiver_rv)RecyclerView recyclerView;
-    @BindView(R.id.fragmentotheruser_notification_receiver_srl)SwipeRefreshLayout swipeRefreshLayout;
+public class OtheruserNotificationReceiverFragment1 extends Fragment {
+    @BindView(R.id.fragmentotheruser_notification_receiver1_rv)RecyclerView recyclerView;
+    @BindView(R.id.fragmentotheruser_notification_receiver1_srl)SwipeRefreshLayout swipeRefreshLayout;
 
     OtherUsersActivity otheruserActivity;
-    private String url="http://"+currentUrl+":8888/android_connect/otheruser_notification.php";
+    private String url="http://"+currentUrl+":8888/android_connect/otheruser_notification1.php";
     private String currentClass; //当前用户所处的班级
-    private String TAG="userNotiRec";
-    private NotificationAdapter adapter;
+    private String TAG="userNotiRec1";
+    private NotificationAdapter1 adapter;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState){
-        View view=inflater.inflate(R.layout.fragment_otheruser_notification_receiver,container,false);
+        View view=inflater.inflate(R.layout.fragment_otheruser_notification_receiver1,container,false);
         ButterKnife.bind(this,view);
         otheruserActivity=(OtherUsersActivity)getActivity();
         swipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary);
@@ -80,11 +81,11 @@ public class OtheruserNotificationReceiverFragment extends Fragment {
                     if (response.isSuccessful()){
                         //查询成功
                         Gson gson=new Gson();
-                        List<OtheruserNotification> notificationList=gson.fromJson(responseData,new TypeToken<List<OtheruserNotification>>(){}.getType());
+                        List<OtheruserNotification1> notificationList=gson.fromJson(responseData,new TypeToken<List<OtheruserNotification1>>(){}.getType());
 //                        for(TeacherNotification notification:notificationList){
 //                            Log.d(TAG, notification.getNotification_sender());
 //                        }
-                        adapter=new NotificationAdapter(notificationList);
+                        adapter=new NotificationAdapter1(notificationList);
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
@@ -121,8 +122,8 @@ public class OtheruserNotificationReceiverFragment extends Fragment {
                     String responseData=response.body().string();
                     if(response.isSuccessful()){
                         Gson gson=new Gson();
-                        List<OtheruserNotification> notificationList=gson.fromJson(responseData,new TypeToken<List<OtheruserNotification>>(){}.getType());
-                        adapter=new NotificationAdapter(notificationList);
+                        List<OtheruserNotification1> notificationList=gson.fromJson(responseData,new TypeToken<List<OtheruserNotification1>>(){}.getType());
+                        adapter=new NotificationAdapter1(notificationList);
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {

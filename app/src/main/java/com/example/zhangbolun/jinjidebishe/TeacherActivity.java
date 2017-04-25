@@ -46,7 +46,7 @@ public class TeacherActivity extends AppCompatActivity{
     private void replaceFragment(Fragment fragment){
         FragmentManager fragmentMananger=getSupportFragmentManager();
         FragmentTransaction transaction=fragmentMananger.beginTransaction();
-        transaction.replace(R.id.activity_otheruser_framelayout,fragment);
+        transaction.replace(R.id.activity_teacher_framelayout,fragment);
         transaction.commit();
     }
 
