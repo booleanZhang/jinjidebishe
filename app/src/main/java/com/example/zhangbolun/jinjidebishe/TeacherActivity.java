@@ -10,8 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import teacher.notification.TeacherNotificationFragment;
-import teacher.checkon.TeacherCheckOnFragment;
+import com.example.zhangbolun.jinjidebishe.teacher.notification.TeacherNotificationFragment;
+import com.example.zhangbolun.jinjidebishe.teacher.checkon.TeacherCheckOnFragment;
 
 public class TeacherActivity extends AppCompatActivity{
     private String TAG="TeacherActiviy";
@@ -23,7 +23,7 @@ public class TeacherActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher);
         Intent intent=getIntent();
-        currentUser=intent.getStringExtra("currentUser");
+        currentUser=intent.getStringExtra("com/example/zhangbolun/jinjidebishe/currentUser");
         replaceFragment(new TeacherNotificationFragment());
         mNavigationView=(NavigationView)findViewById(R.id.teacher_nav_view);
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {

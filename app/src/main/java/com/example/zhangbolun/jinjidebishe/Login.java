@@ -11,8 +11,8 @@ import com.ashokvarma.bottomnavigation.BadgeItem;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 
-import login.LoginFragment;
-import login.RegisterFragment;
+import com.example.zhangbolun.jinjidebishe.login.LoginFragment;
+import com.example.zhangbolun.jinjidebishe.login.RegisterFragment;
 
 public class Login extends AppCompatActivity {
     private BottomNavigationBar mBottomNavigationBar;

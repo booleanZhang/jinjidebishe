@@ -13,7 +13,7 @@ import android.view.MenuItem;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import otheruser.notification.OtheruserNotificationFragment;
+import com.example.zhangbolun.jinjidebishe.otheruser.notification.OtheruserNotificationFragment;
 
 public class OtherUsersActivity extends AppCompatActivity {
     @BindView(R.id.otheruser_nav_view)NavigationView mNavigationView;
@@ -26,7 +26,7 @@ public class OtherUsersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_other_users);
         ButterKnife.bind(this);
         Intent intent=getIntent();
-        currentUser=intent.getStringExtra("currentUser");
+        currentUser=intent.getStringExtra("com/example/zhangbolun/jinjidebishe/currentUser");
         Log.d(TAG, currentUser);
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override

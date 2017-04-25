@@ -15,11 +15,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.google.gson.internal.bind.ArrayTypeAdapter;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import okhttp3.FormBody;
@@ -28,7 +26,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-import static login.LoginFragment.currentUrl;
+import static com.example.zhangbolun.jinjidebishe.login.LoginFragment.currentUrl;
 
 public class TeacherAddNotification extends AppCompatActivity {
     private String url=currentUrl;
@@ -63,7 +61,7 @@ public class TeacherAddNotification extends AppCompatActivity {
         dataList=new ArrayList<String>();
 
         Intent intent=getIntent();
-        final String currentUser=intent.getStringExtra("currentUser");
+        final String currentUser=intent.getStringExtra("com/example/zhangbolun/jinjidebishe/currentUser");
         final String type=intent.getStringExtra("type");
         if(type.equals("0")){
             title.setText("发布通知");
