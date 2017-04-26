@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/fragment_otheruser_checkon_receiver_mapView"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:clickable="true"/>
+    <!--<TextView-->
+        <!--android:id="@+id/fragment_otheruser_checkon_receiver_tv"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="170dp" />-->
+    <Button
+        android:text="上学签入"
+        android:id="@+id/fragment_otheruser_checkon_receiver_in"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_otheruser_checkon_receiver_mapView"/>
+    <Button
+        android:id="@+id/fragment_otheruser_checkon_receiver_out"
+        android:text="放学签出"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_otheruser_checkon_receiver_mapView"/>
 
-</LinearLayout>
+</RelativeLayout>
