@@ -45,6 +45,7 @@ public class NotificationDetailTeacher extends AppCompatActivity {
         scopeText=(TextView)findViewById(R.id.teacher_notification_detail_scope);
         dateText=(TextView)findViewById(R.id.teacher_notification_detail_date);
         collapsingToolbarLayout=(CollapsingToolbarLayout)findViewById(R.id.teacher_notification_detail_collapsing_toolbar);
+
         if(mark.equals("0")){
             collapsingToolbarLayout.setTitle("通知详细信息");
         }else if(mark.equals("1")){

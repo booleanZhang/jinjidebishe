@@ -24,11 +24,14 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 import com.example.zhangbolun.jinjidebishe.OtherUsersActivity;
 import com.example.zhangbolun.jinjidebishe.R;
 import com.example.zhangbolun.jinjidebishe.TeacherActivity;
+import com.example.zhangbolun.jinjidebishe.TestActivity;
 import com.google.gson.Gson;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.chat.EMClient;
 
 import com.example.zhangbolun.jinjidebishe.currentUser.CurrentUser;
+
+import butterknife.ButterKnife;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;

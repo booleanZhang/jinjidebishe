@@ -13,6 +13,8 @@ import android.view.MenuItem;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import com.example.zhangbolun.jinjidebishe.otheruser.checkon.OtheruserCheckonFragment;
 import com.example.zhangbolun.jinjidebishe.otheruser.notification.OtheruserNotificationFragment;
 
 public class OtherUsersActivity extends AppCompatActivity {
@@ -36,7 +38,7 @@ public class OtherUsersActivity extends AppCompatActivity {
                         replaceFragment(new OtheruserNotificationFragment());
                         break;
                     case R.id.otheruser_checkon:
-                        Log.d(TAG, "checkon");
+                        replaceFragment(new OtheruserCheckonFragment());
                         break;
                     default:
                         break;

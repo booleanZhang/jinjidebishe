@@ -1,97 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#049CA3">
-<LinearLayout
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="214dp"
-        android:text="家校通"
-        android:gravity="center"
-        android:textSize="45sp"
-        android:textColor="#FFFFFF"/>
-    <android.support.v7.widget.CardView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="13dp"
-        app:cardCornerRadius="4dp">
-        <LinearLayout
-            android:orientation="vertical"
+        android:orientation="vertical">
+
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <EditText
-                android:layout_margin="10dp"
-                android:id="@+id/fragmentlogin_username"
+            android:layout_height="214dp"
+            android:gravity="center"
+            android:text="家校通"
+            android:textColor="#FFFFFF"
+            android:textSize="45sp" />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="13dp"
+            app:cardCornerRadius="4dp">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="请在这里输入你的用户名"
-                android:textSize="24sp" />
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
                 <EditText
-                    android:layout_margin="10dp"
-                    android:id="@+id/fragmentlogin_pwd"
+                    android:id="@+id/fragmentlogin_username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="请在这里输入你的密码"
-                    android:textSize="24sp"
-                    android:layout_alignParentLeft="true"/>
-                <ImageButton
-                    android:id="@+id/fragmentlogin_imagebtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:src="@mipmap/iconmonstr_eye_8_24"
-                    android:layout_marginTop="7dp"
-                    android:layout_marginRight="13dp"/>
-            </RelativeLayout>
-            <Button
-                android:layout_margin="10dp"
-                android:id="@+id/fragmentlogin_btn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="点击登录"
-                android:textSize="24sp"/>
-            <RadioGroup
-                android:id="@+id/fragmentlogin_radio_group"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <RadioButton
-                    android:id="@+id/fragmentlogin_radio_teacher"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="教师登录"
-                    android:layout_marginLeft="5dp"
-                    android:checked="true"/>
-                <RadioButton
-                    android:id="@+id/fragmentlogin_radio_student"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="学生登录"
-                    android:layout_marginLeft="25dp"/>
-                <RadioButton
-                    android:id="@+id/fragmentlogin_radio_parent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="家长登录"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginRight="10dp"/>
-            </RadioGroup>
-            <CheckBox
-                android:id="@+id/fragmentlogin_remember_pwd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="点击此处记住密码"
-                android:layout_margin="10dp" />
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
+                    android:layout_margin="10dp"
+                    android:hint="请在这里输入你的用户名"
+                    android:textSize="24sp" />
 
-</LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/fragmentlogin_pwd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_margin="10dp"
+                        android:hint="请在这里输入你的密码"
+                        android:textSize="24sp" />
+
+                    <ImageButton
+                        android:id="@+id/fragmentlogin_imagebtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="13dp"
+                        android:layout_marginTop="7dp"
+                        android:src="@mipmap/iconmonstr_eye_8_24" />
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/fragmentlogin_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="点击登录"
+                    android:textSize="24sp" />
+
+                <RadioGroup
+                    android:id="@+id/fragmentlogin_radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/fragmentlogin_radio_teacher"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:checked="true"
+                        android:text="教师登录" />
+
+                    <RadioButton
+                        android:id="@+id/fragmentlogin_radio_student"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:text="学生登录" />
+
+                    <RadioButton
+                        android:id="@+id/fragmentlogin_radio_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="10dp"
+                        android:text="家长登录" />
+                </RadioGroup>
+
+                <CheckBox
+                    android:id="@+id/fragmentlogin_remember_pwd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="点击此处记住密码" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
 </FrameLayout>

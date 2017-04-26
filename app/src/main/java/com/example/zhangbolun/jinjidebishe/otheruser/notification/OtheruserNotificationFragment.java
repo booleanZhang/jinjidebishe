@@ -4,11 +4,13 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -41,7 +43,7 @@ public class OtheruserNotificationFragment extends Fragment {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeAsUpIndicator(R.mipmap.iconmonstr_menu_2_16);
         }
-        mDrawerLayout=(DrawerLayout)getActivity().findViewById(R.id.teacher_drawer);
+        mDrawerLayout=(DrawerLayout)getActivity().findViewById(R.id.otheruser_drawer);
         bottomNavigationBar.setMode(BottomNavigationBar.MODE_SHIFTING);
         bottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_RIPPLE);                                                        //淡蓝色
         bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.iconmonstr_book_23_32,"通知").setInActiveColor(R.color.colorPrimary).setActiveColor("#1755BF")/*.setBadgeItem(numberBadgeItem)*/)
@@ -78,6 +80,25 @@ public class OtheruserNotificationFragment extends Fragment {
         });
 
         return view;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case android.R.id.home:
+                mDrawerLayout.openDrawer(GravityCompat.START);
+                break;
+            case R.id.teacher_notification_item1:
+                break;
+            case R.id.teacher_notification_item2:
+                break;
+            case R.id.teacher_notification_item3:
+                break;
+            case R.id.teacher_notification_item4:
+                break;
+            default:
+                break;
+        }
+        return false;
     }
 
     public void replaceFragment(Fragment fragment){

@@ -20,7 +20,6 @@ import com.example.zhangbolun.jinjidebishe.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
 /**
  * Created by zhangbolun on 2017/4/20.
  */
