@@ -32,8 +32,8 @@ public class Login extends AppCompatActivity {
         mBottomNavigationBar=(BottomNavigationBar)findViewById(R.id.activitylogin_bottom_bar);
         mBottomNavigationBar.setMode(BottomNavigationBar.MODE_SHIFTING);
         mBottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_RIPPLE);                                                        //深情的蓝色
-        mBottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.lock_unlock_48px,"用户登录").setInActiveColor(R.color.colorPrimary).setActiveColor("#2E86C1")/*.setBadgeItem(numberBadgeItem)*/)
-                .addItem(new BottomNavigationItem(R.mipmap.new_file_48px,"家长注册").setInActiveColor(R.color.colorPrimaryDark).setActiveColor("#DBA901")) //屎黄色代码
+        mBottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.lock_unlock_48px,"用户登录").setInActiveColor(R.color.colorPrimary).setActiveColor("#049CA3")/*.setBadgeItem(numberBadgeItem)*/)
+                .addItem(new BottomNavigationItem(R.mipmap.new_file_48px,"家长注册").setInActiveColor(R.color.colorPrimaryDark).setActiveColor("#049CA3")) //屎黄色代码
                 .setFirstSelectedPosition(0)
                 .initialise();
         replaceFragment(new LoginFragment());

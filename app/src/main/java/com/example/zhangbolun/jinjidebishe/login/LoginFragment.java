@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
@@ -57,6 +60,8 @@ public class LoginFragment extends Fragment {
     private RadioButton radio_student=null;
     private RadioButton radio_parent=null;
     private Button btn;
+    private ImageButton imageButton;
+    private int imageButtonTemp=0;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view=inflater.inflate(R.layout.fragment_login,container,false);
         username=(EditText) view.findViewById(R.id.fragmentlogin_username);
@@ -67,6 +72,7 @@ public class LoginFragment extends Fragment {
         radio_teacher=(RadioButton)view.findViewById(R.id.fragmentlogin_radio_teacher);
         radio_student=(RadioButton)view.findViewById(R.id.fragmentlogin_radio_student);
         radio_parent=(RadioButton)view.findViewById(R.id.fragmentlogin_radio_parent);
+        imageButton=(ImageButton)view.findViewById(R.id.fragmentlogin_imagebtn) ;
         currentUser=new CurrentUser();
 
         pref= PreferenceManager.getDefaultSharedPreferences(getContext());
@@ -127,6 +133,24 @@ public class LoginFragment extends Fragment {
 
                             }
                         });
+            }
+        });
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (imageButtonTemp){
+                    case 0:{
+                        pwd.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                        imageButtonTemp=1;
+                    }
+                        break;
+                    case 1:{
+                        pwd.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                        imageButtonTemp=0;
+                    }
+                        break;
+                }
             }
         });
         return view;
