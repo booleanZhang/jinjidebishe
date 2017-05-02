@@ -7,8 +7,8 @@
             android:id="@+id/otheruser_checkon"
             android:title="签到"/>
         <item
-            android:id="@+id/otheruser_nav_item3"
-            android:title="item3"/>
+            android:id="@+id/otheruser_holiday"
+            android:title="请假条"/>
         <item
             android:id="@+id/otheruser_nav_item4"
             android:title="item4"/>

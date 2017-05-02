@@ -72,6 +72,8 @@ public class CheckOnAdapter extends RecyclerView.Adapter<CheckOnAdapter.ViewHold
         }else if(checkOn.getAbsence().equals("1")){
             //学生未到校
             holder.absence.setText("缺勤");
+        }else{
+            holder.absence.setText("缺勤");
         }
     }
 

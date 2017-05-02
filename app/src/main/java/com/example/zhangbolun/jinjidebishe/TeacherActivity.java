@@ -36,6 +36,9 @@ public class TeacherActivity extends AppCompatActivity{
                     case R.id.teacher_checkon:
                         replaceFragment(new TeacherCheckOnFragment());
                         break;
+                    case R.id.teacher_holiday:
+                        //教师请假条
+                        break;
 
                 }
                 return false;

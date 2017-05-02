@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:qpp="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    qpp:cardCornerRadius="4dp"
+    android:layout_margin="3dp">
+    <!--色彩代码：红色：#CD0000 绿色：#005800 黄色：#B9B900-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/holiday_student_item_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="#FFFFFF" />
+        <TextView
+            android:id="@+id/holiday_student_item_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

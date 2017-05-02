@@ -89,7 +89,8 @@
             android:process=":remote" />
 
         <activity android:name=".TestActivity" />
-        <activity android:name=".otheruser.checkon.OtheruserCheckOnDetailActivity"></activity>
+        <activity android:name=".otheruser.checkon.OtheruserCheckOnDetailActivity" />
+        <activity android:name=".HolidayActivity"></activity>
     </application>
 
 </manifest>

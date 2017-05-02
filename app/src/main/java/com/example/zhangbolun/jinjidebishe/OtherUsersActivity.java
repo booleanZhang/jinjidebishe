@@ -15,6 +15,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import com.example.zhangbolun.jinjidebishe.otheruser.checkon.OtheruserCheckonFragment;
+import com.example.zhangbolun.jinjidebishe.otheruser.holiday.OtheruserHolidayParnetFragment;
+import com.example.zhangbolun.jinjidebishe.otheruser.holiday.OtheruserHolidayStudentContainer;
+import com.example.zhangbolun.jinjidebishe.otheruser.holiday.OtheruserHolidayStudentFragment;
 import com.example.zhangbolun.jinjidebishe.otheruser.notification.OtheruserNotificationFragment;
 
 public class OtherUsersActivity extends AppCompatActivity {
@@ -39,6 +42,17 @@ public class OtherUsersActivity extends AppCompatActivity {
                         break;
                     case R.id.otheruser_checkon:
                         replaceFragment(new OtheruserCheckonFragment());
+                        break;
+                    case R.id.otheruser_holiday:
+                        //学生请假条
+                    {
+                        if(getCurrentUser().length()==9){
+                            replaceFragment(new OtheruserHolidayStudentContainer());
+                        }else if(getCurrentUser().length()==10){
+                            //家长登录
+                            replaceFragment(new OtheruserHolidayParnetFragment());
+                        }
+                    }
                         break;
                     default:
                         break;

@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zhangbolun.jinjidebishe.otheruser.holiday.OtheruserHolidayStudentFragment"
+    android:background="#049CA3">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="请假条"
+        android:textSize="30dp"
+        android:textColor="#FFFFFF"/>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="4dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:text="请假条标题"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"/>
+                <EditText
+                    android:id="@+id/fragment_otheruser_holiday_head"
+                    android:textSize="24sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:text="请假条内容"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"/>
+                <EditText
+                    android:id="@+id/fragment_otheruser_holiday_body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:lines="10"
+                    android:gravity="start"/>
+                <Button
+                    android:id="@+id/fragment_otheruser_holiday_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="点我请假"/>
+            </LinearLayout>
+        </ScrollView>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

@@ -28,4 +28,5 @@ public class Parent {
     public void setParent_phone(String parent_phone){this.parent_phone=parent_phone;}
     public void setParent_password(String parent_password){this.parent_password=parent_password;}
     public void setParent_name(String parent_name){this.parent_name=parent_name;}
+
 }
