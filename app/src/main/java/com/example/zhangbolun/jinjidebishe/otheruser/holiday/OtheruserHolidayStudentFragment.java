@@ -47,7 +47,7 @@ public class OtheruserHolidayStudentFragment extends Fragment {
                             OkHttpClient client=new OkHttpClient();
                             RequestBody formBody=new FormBody.Builder().add("post_id",otherUsersActivity.getCurrentUser())
                                     .add("post_head",head.getText().toString().trim())
-                                    .add("post_body",head.getText().toString().trim())
+                                    .add("post_body",body.getText().toString().trim())
                                     .build();
                             Request request=new Request.Builder().post(formBody).url(url).build();
                             Response response=client.newCall(request).execute();
