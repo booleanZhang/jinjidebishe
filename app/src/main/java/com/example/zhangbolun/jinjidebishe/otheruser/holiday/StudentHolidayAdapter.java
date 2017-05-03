@@ -45,13 +45,13 @@ public class StudentHolidayAdapter extends RecyclerView.Adapter<StudentHolidayAd
             mContext=parent.getContext();
         }
         View view= LayoutInflater.from(mContext).inflate(R.layout.holiday_student_item,parent,false);
-        final ViewHolder holder=new ViewHolder(view);
+        final StudentHolidayAdapter.ViewHolder holder=new StudentHolidayAdapter.ViewHolder(view);
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int position=holder.getAdapterPosition();
                 Log.d(TAG, "======"+Integer.toString(position));
-                StudentHoliday studentHoliday=mStudentHolidayList.get(position+1);
+                StudentHoliday studentHoliday=mStudentHolidayList.get(position);
                 Intent intent=new Intent(mContext, HolidayActivity.class);
                 intent.putExtra("date",studentHoliday.getDate());
                 intent.putExtra("student",studentHoliday.getStudent());
@@ -61,7 +61,7 @@ public class StudentHolidayAdapter extends RecyclerView.Adapter<StudentHolidayAd
                 mContext.startActivity(intent);
             }
         });
-        return new ViewHolder(view);
+        return holder;
     }
 
     public void onBindViewHolder(ViewHolder holder,int position){
@@ -87,6 +87,11 @@ public class StudentHolidayAdapter extends RecyclerView.Adapter<StudentHolidayAd
             holder.date.setBackgroundColor(android.graphics.Color.parseColor("#005800"));
             holder.state.setBackgroundColor(android.graphics.Color.parseColor("#005800"));
             holder.state.setText("当前状态：教师准假");
+        }else if(studentHoliday.getAbsence().equals("6")){
+            //教师准假，请假完成
+            holder.date.setBackgroundColor(android.graphics.Color.parseColor("#CD0000"));
+            holder.state.setBackgroundColor(android.graphics.Color.parseColor("#CD0000"));
+            holder.state.setText("当前状态：家长不同意请假");
         }
     }
 

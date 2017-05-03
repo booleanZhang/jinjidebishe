@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -46,11 +47,19 @@ public class OtheruserCheckOnDetailActivity extends AppCompatActivity {
             intime.setVisibility(View.GONE);
             outtime.setVisibility(View.GONE);
             reason.setVisibility(View.VISIBLE);
-            if(intent.getStringExtra("reason").equals("")){
-                reason.setText("未请假，也未到校，逃课");
-            }else{
-                reason.setText(intent.getStringExtra("reason"));
-            }
+            reason.setText(intent.getStringExtra("reason"));
+        }else if(intent.getStringExtra("absence").equals("9")||intent.getStringExtra("absence").equals("8")||intent.getStringExtra("absence").equals("7")||intent.getStringExtra("absence").equals("6")){
+            absence.setText("未到校");
+            intime.setVisibility(View.GONE);
+            outtime.setVisibility(View.GONE);
+            reason.setVisibility(View.VISIBLE);
+            reason.setText("请假了，但并未被批准");
+        }else{
+            absence.setText("未到校");
+            intime.setVisibility(View.GONE);
+            outtime.setVisibility(View.GONE);
+            reason.setVisibility(View.VISIBLE);
+            reason.setText("未请假，逃课");
         }
         toolbar.setTitle("学生签到详细信息");
         setSupportActionBar(toolbar);

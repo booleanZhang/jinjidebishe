@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import com.example.zhangbolun.jinjidebishe.otheruser.checkon.OtheruserCheckOnReceiverFragment1;
 import com.example.zhangbolun.jinjidebishe.otheruser.checkon.OtheruserCheckonFragment;
 import com.example.zhangbolun.jinjidebishe.otheruser.holiday.OtheruserHolidayParnetFragment;
 import com.example.zhangbolun.jinjidebishe.otheruser.holiday.OtheruserHolidayStudentContainer;
@@ -41,7 +42,15 @@ public class OtherUsersActivity extends AppCompatActivity {
                         replaceFragment(new OtheruserNotificationFragment());
                         break;
                     case R.id.otheruser_checkon:
-                        replaceFragment(new OtheruserCheckonFragment());
+                    {
+                        if(getCurrentUser().length()==9){
+                            replaceFragment(new OtheruserCheckonFragment());
+                        }else if(getCurrentUser().length()==10){
+                            //家长登录
+                            replaceFragment(new OtheruserCheckOnReceiverFragment1());
+                        }
+                    }
+
                         break;
                     case R.id.otheruser_holiday:
                         //学生请假条

@@ -1,38 +1,100 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
-    tools:context="com.example.zhangbolun.jinjidebishe.otheruser.holiday.OtheruserHolidayParnetFragment">
+    android:layout_width="match_parent"
+    android:layout_margin="20dp"
+    app:cardCornerRadius="4dp">
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <CheckBox
-            android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.example.zhangbolun.jinjidebishe.otheruser.holiday.OtheruserHolidayParnetFragment">
+
+        <!--红色#D22900 绿色#01932D-->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#01932D"
-            android:layout_weight="1"/>
-        <TextView
-            android:layout_width="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="今日假条"
+                android:textSize="24sp"
+                android:layout_weight="7"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/triangle_24"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/fragment_otheruser_holiday_parent_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="24sp"/>
+            <TextView
+                android:id="@+id/fragment_otheruser_holiday_parent_reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:lines="3"/>
+            <TextView
+                android:id="@+id/fragment_otheruser_holiday_parent_posttime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/fragment_otheruser_holiday_parent_agree"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="确认孩子请假"/>
+                <Button
+                    android:id="@+id/fragment_otheruser_holiday_parent_refuse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="拒绝孩子请假"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/fragment_otheruser_holiday_parent_oldday"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="40"
-            android:text="已签字假条"
-            android:textSize="18sp"/>
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#D22900"
-            android:layout_weight="1"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="40"
-            android:text="未签字假条"
-            android:textSize="18sp"/>
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/fragment_otheruser_holiday_parent_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="往日假条"
+                android:textSize="24sp"
+                android:layout_weight="7"/>
+
+            <ImageButton
+                android:id="@+id/fragment_otheruser_holiday_parent_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/triangle_24"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/fragment_otheruser_holiday_parent_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/fragment_otheruser_holiday_parent_recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-</LinearLayout>
+
+</android.support.v7.widget.CardView>
