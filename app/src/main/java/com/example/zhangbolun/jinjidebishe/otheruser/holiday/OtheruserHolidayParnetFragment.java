@@ -183,6 +183,8 @@ public class OtheruserHolidayParnetFragment extends Fragment {
                                     textView_date.setText("无请假信息");
                                     textView_posttime.setVisibility(View.GONE);
                                     textView_reason.setVisibility(View.GONE);
+                                    btn_agree.setVisibility(View.GONE);
+                                    btn_refuse.setVisibility(View.GONE);
                                 }
                             });
                         }else{

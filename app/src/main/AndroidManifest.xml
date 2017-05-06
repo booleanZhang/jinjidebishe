@@ -90,7 +90,8 @@
 
         <activity android:name=".TestActivity" />
         <activity android:name=".otheruser.checkon.OtheruserCheckOnDetailActivity" />
-        <activity android:name=".HolidayActivity"></activity>
+        <activity android:name=".HolidayActivity" />
+        <activity android:name=".teacher.holiday.TeacherHolidayTodayDeatilActivity"></activity>
     </application>
 
 </manifest>

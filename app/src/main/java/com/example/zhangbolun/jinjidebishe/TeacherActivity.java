@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.zhangbolun.jinjidebishe.teacher.holiday.TeacherHolidayFragment;
 import com.example.zhangbolun.jinjidebishe.teacher.notification.TeacherNotificationFragment;
 import com.example.zhangbolun.jinjidebishe.teacher.checkon.TeacherCheckOnFragment;
 
@@ -38,6 +39,7 @@ public class TeacherActivity extends AppCompatActivity{
                         break;
                     case R.id.teacher_holiday:
                         //教师请假条
+                        replaceFragment(new TeacherHolidayFragment());
                         break;
 
                 }
