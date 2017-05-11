@@ -15,5 +15,8 @@
         <item
             android:id="@+id/otheruser_nav_item5"
             android:title="item5"/>
+        <item
+            android:id="@+id/otheruser_personal_infomation"
+            android:title="个人信息管理"/>
     </group>
 </menu>

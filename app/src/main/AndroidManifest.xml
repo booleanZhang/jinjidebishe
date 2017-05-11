@@ -91,7 +91,21 @@
         <activity android:name=".TestActivity" />
         <activity android:name=".otheruser.checkon.OtheruserCheckOnDetailActivity" />
         <activity android:name=".HolidayActivity" />
-        <activity android:name=".teacher.holiday.TeacherHolidayTodayDeatilActivity"></activity>
+        <activity android:name=".teacher.holiday.TeacherHolidayTodayDeatilActivity" />
+        <activity android:name=".teacher.personal_information.TeacherPersonalInformationActivity" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.zhangbolun.jinjidebishe.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity android:name=".otheruser.personal_information.ParentPersonalInformationActivity" />
+        <activity android:name=".otheruser.personal_information.StudentPersonalInformationActivity"></activity>
     </application>
 
 </manifest>

@@ -14,12 +14,14 @@ import android.view.MenuItem;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import com.example.zhangbolun.jinjidebishe.currentUser.Parent;
 import com.example.zhangbolun.jinjidebishe.otheruser.checkon.OtheruserCheckOnReceiverFragment1;
 import com.example.zhangbolun.jinjidebishe.otheruser.checkon.OtheruserCheckonFragment;
 import com.example.zhangbolun.jinjidebishe.otheruser.holiday.OtheruserHolidayParnetFragment;
 import com.example.zhangbolun.jinjidebishe.otheruser.holiday.OtheruserHolidayStudentContainer;
-import com.example.zhangbolun.jinjidebishe.otheruser.holiday.OtheruserHolidayStudentFragment;
 import com.example.zhangbolun.jinjidebishe.otheruser.notification.OtheruserNotificationFragment;
+import com.example.zhangbolun.jinjidebishe.otheruser.personal_information.ParentPersonalInformationActivity;
+import com.example.zhangbolun.jinjidebishe.otheruser.personal_information.StudentPersonalInformationActivity;
 
 public class OtherUsersActivity extends AppCompatActivity {
     @BindView(R.id.otheruser_nav_view)NavigationView mNavigationView;
@@ -60,6 +62,19 @@ public class OtherUsersActivity extends AppCompatActivity {
                         }else if(getCurrentUser().length()==10){
                             //家长登录
                             replaceFragment(new OtheruserHolidayParnetFragment());
+                        }
+                    }
+                        break;
+                    case R.id.otheruser_personal_infomation:
+                    {
+                        if(getCurrentUser().length()==9){
+                            Intent intent=new Intent(OtherUsersActivity.this, StudentPersonalInformationActivity.class);
+                            intent.putExtra("studentId",getCurrentUser());
+                            startActivity(intent);
+                        }else if(getCurrentUser().length()==10){
+                            Intent intent=new Intent(OtherUsersActivity.this, ParentPersonalInformationActivity.class);
+                            intent.putExtra("parentId",getCurrentUser());
+                            startActivity(intent);
                         }
                     }
                         break;

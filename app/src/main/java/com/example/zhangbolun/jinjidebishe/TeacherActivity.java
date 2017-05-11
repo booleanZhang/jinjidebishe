@@ -8,11 +8,13 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.example.zhangbolun.jinjidebishe.teacher.holiday.TeacherHolidayFragment;
 import com.example.zhangbolun.jinjidebishe.teacher.notification.TeacherNotificationFragment;
 import com.example.zhangbolun.jinjidebishe.teacher.checkon.TeacherCheckOnFragment;
+import com.example.zhangbolun.jinjidebishe.teacher.personal_information.TeacherPersonalInformationActivity;
 
 public class TeacherActivity extends AppCompatActivity{
     private String TAG="TeacherActiviy";
@@ -41,6 +43,11 @@ public class TeacherActivity extends AppCompatActivity{
                         //教师请假条
                         replaceFragment(new TeacherHolidayFragment());
                         break;
+                    case R.id.teacher_personal_information:
+                        Intent intent=new Intent(TeacherActivity.this, TeacherPersonalInformationActivity.class);
+                        intent.putExtra("teacherId",getCurrentUser());
+                        startActivity(intent);
+                        break;
 
                 }
                 return false;
@@ -58,4 +65,5 @@ public class TeacherActivity extends AppCompatActivity{
     public String getCurrentUser(){
         return currentUser;
     }
+
 }
