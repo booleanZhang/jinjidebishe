@@ -14,9 +14,9 @@ import android.view.MenuItem;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import com.example.zhangbolun.jinjidebishe.currentUser.Parent;
 import com.example.zhangbolun.jinjidebishe.otheruser.checkon.OtheruserCheckOnReceiverFragment1;
 import com.example.zhangbolun.jinjidebishe.otheruser.checkon.OtheruserCheckonFragment;
+import com.example.zhangbolun.jinjidebishe.otheruser.dynamic.DynamicOtheruserFragment;
 import com.example.zhangbolun.jinjidebishe.otheruser.holiday.OtheruserHolidayParnetFragment;
 import com.example.zhangbolun.jinjidebishe.otheruser.holiday.OtheruserHolidayStudentContainer;
 import com.example.zhangbolun.jinjidebishe.otheruser.notification.OtheruserNotificationFragment;
@@ -77,6 +77,9 @@ public class OtherUsersActivity extends AppCompatActivity {
                             startActivity(intent);
                         }
                     }
+                        break;
+                    case R.id.otheruser_dynamic:
+                        replaceFragment(new DynamicOtheruserFragment());
                         break;
                     default:
                         break;

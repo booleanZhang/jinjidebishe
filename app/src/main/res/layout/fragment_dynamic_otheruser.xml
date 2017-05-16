@@ -1,0 +1,26 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zhangbolun.jinjidebishe.otheruser.dynamic.DynamicOtheruserFragment">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/fragment_dynamic_otheruser_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"/>
+
+    <com.ashokvarma.bottomnavigation.BottomNavigationBar
+        android:id="@+id/fragment_dynamic_otheruser_bottomNavigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+    <FrameLayout
+        android:id="@+id/fragment_dynamic_otheruser_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/fragment_dynamic_otheruser_toolbar"
+        android:layout_above="@id/fragment_dynamic_otheruser_bottomNavigationBar"/>
+
+</RelativeLayout>

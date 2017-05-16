@@ -13,8 +13,8 @@
             android:id="@+id/teacher_nav_item4"
             android:title="item4"/>
         <item
-            android:id="@+id/teacher_nav_item5"
-            android:title="item5"/>
+            android:id="@+id/teacher_dynamic"
+            android:title="班级圈/校园圈"/>
         <item
             android:id="@+id/teacher_personal_information"
             android:title="个人信息管理"/>

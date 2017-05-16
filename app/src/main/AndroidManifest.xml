@@ -105,7 +105,12 @@
         </provider>
 
         <activity android:name=".otheruser.personal_information.ParentPersonalInformationActivity" />
-        <activity android:name=".otheruser.personal_information.StudentPersonalInformationActivity"></activity>
+        <activity android:name=".otheruser.personal_information.StudentPersonalInformationActivity" />
+        <activity
+            android:name=".dynamic.DynamicActivity"
+            android:label="@string/title_activity_dynamic"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".otheruser.dynamic.DynamicOtheruserPostActivity"></activity>
     </application>
 
 </manifest>

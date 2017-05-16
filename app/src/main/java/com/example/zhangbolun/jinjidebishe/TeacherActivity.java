@@ -8,9 +8,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 
+import com.example.zhangbolun.jinjidebishe.teacher.dynamic.DynamicTeacherFragment;
 import com.example.zhangbolun.jinjidebishe.teacher.holiday.TeacherHolidayFragment;
 import com.example.zhangbolun.jinjidebishe.teacher.notification.TeacherNotificationFragment;
 import com.example.zhangbolun.jinjidebishe.teacher.checkon.TeacherCheckOnFragment;
@@ -42,6 +42,9 @@ public class TeacherActivity extends AppCompatActivity{
                     case R.id.teacher_holiday:
                         //教师请假条
                         replaceFragment(new TeacherHolidayFragment());
+                        break;
+                    case R.id.teacher_dynamic:
+                        replaceFragment(new DynamicTeacherFragment());
                         break;
                     case R.id.teacher_personal_information:
                         Intent intent=new Intent(TeacherActivity.this, TeacherPersonalInformationActivity.class);
