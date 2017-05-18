@@ -8,6 +8,7 @@ public class CurrentUser {
     private String current_id;
     private String returnCode;
 
+
     public void setCurrent_id(String current_id){this.current_id=current_id;}
     public void setReturnCode(String returnCode){this.returnCode=returnCode;}
 

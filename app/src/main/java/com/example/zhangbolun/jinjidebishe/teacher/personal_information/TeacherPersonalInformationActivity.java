@@ -136,7 +136,7 @@ public class TeacherPersonalInformationActivity extends AppCompatActivity {
                 dialog.setNegativeButton("相机", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        outputImage=new File(getExternalCacheDir(),"teacher_head_image.jpg");
+                        outputImage=new File(getExternalCacheDir(),teacherId+"teacher_head_image.jpg");
                         try{
                             if(outputImage.exists()){
                                 outputImage.delete();

@@ -38,7 +38,7 @@ public class TeacherHolidayFragment extends Fragment {
         toolbar.setTitle("请假条");
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
         ActionBar actionBar=((AppCompatActivity)getActivity()).getSupportActionBar();
-        if(actionBar==null){
+        if(actionBar!=null){
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeAsUpIndicator(R.mipmap.iconmonstr_menu_2_16);
         }

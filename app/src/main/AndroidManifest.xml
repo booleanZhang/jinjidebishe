@@ -110,7 +110,10 @@
             android:name=".dynamic.DynamicActivity"
             android:label="@string/title_activity_dynamic"
             android:theme="@style/AppTheme" />
-        <activity android:name=".otheruser.dynamic.DynamicOtheruserPostActivity"></activity>
+        <activity android:name=".otheruser.dynamic.DynamicOtheruserPostActivity" />
+        <activity android:name=".instantmessage.IMActivity" />
+        <activity android:name=".instantmessage.OtheruserContactItemActivity" />
+        <activity android:name=".instantmessage.TeacherContactItemActivity"></activity>
     </application>
 
 </manifest>

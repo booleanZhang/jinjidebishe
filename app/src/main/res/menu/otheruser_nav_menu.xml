@@ -16,6 +16,9 @@
             android:id="@+id/otheruser_dynamic"
             android:title="班级圈/校园圈"/>
         <item
+            android:id="@+id/otheruser_im"
+            android:title="即时聊天"/>
+        <item
             android:id="@+id/otheruser_personal_infomation"
             android:title="个人信息管理"/>
     </group>

@@ -14,6 +14,8 @@ import android.view.MenuItem;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import com.example.zhangbolun.jinjidebishe.instantmessage.IMActivity;
+import com.example.zhangbolun.jinjidebishe.instantmessage.OtheruserContactFragment;
 import com.example.zhangbolun.jinjidebishe.otheruser.checkon.OtheruserCheckOnReceiverFragment1;
 import com.example.zhangbolun.jinjidebishe.otheruser.checkon.OtheruserCheckonFragment;
 import com.example.zhangbolun.jinjidebishe.otheruser.dynamic.DynamicOtheruserFragment;
@@ -22,6 +24,8 @@ import com.example.zhangbolun.jinjidebishe.otheruser.holiday.OtheruserHolidayStu
 import com.example.zhangbolun.jinjidebishe.otheruser.notification.OtheruserNotificationFragment;
 import com.example.zhangbolun.jinjidebishe.otheruser.personal_information.ParentPersonalInformationActivity;
 import com.example.zhangbolun.jinjidebishe.otheruser.personal_information.StudentPersonalInformationActivity;
+import com.hyphenate.chat.EMMessage;
+import com.hyphenate.easeui.EaseConstant;
 
 public class OtherUsersActivity extends AppCompatActivity {
     @BindView(R.id.otheruser_nav_view)NavigationView mNavigationView;
@@ -33,7 +37,7 @@ public class OtherUsersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_other_users);
         ButterKnife.bind(this);
-        Intent intent=getIntent();
+        final Intent intent=getIntent();
         currentUser=intent.getStringExtra("com/example/zhangbolun/jinjidebishe/currentUser");
         Log.d(TAG, currentUser);
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -80,6 +84,9 @@ public class OtherUsersActivity extends AppCompatActivity {
                         break;
                     case R.id.otheruser_dynamic:
                         replaceFragment(new DynamicOtheruserFragment());
+                        break;
+                    case R.id.otheruser_im:
+                        replaceFragment(new OtheruserContactFragment());
                         break;
                     default:
                         break;

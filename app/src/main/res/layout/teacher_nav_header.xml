@@ -5,11 +5,11 @@
     android:padding="10dp"
     android:background="?attr/colorPrimary">
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <ImageView
         android:id="@+id/teacher_icon"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:src="@mipmap/iconmonstr_user_6_48"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/commiunication"
         android:layout_centerInParent="true"/>
     <TextView
         android:id="@+id/teacher_identity"

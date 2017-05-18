@@ -38,6 +38,7 @@ public class DynamicTeacherFragment extends Fragment {
         if(actionBar!=null){
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+        toolbar.setTitle("班级圈/校园圈");
         bottomNavigationBar.setMode(BottomNavigationBar.MODE_SHIFTING);
         bottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_RIPPLE);                                                        //淡蓝色
         bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.ic_people_outline_black_24dp,"班级圈").setInActiveColor(R.color.colorPrimary).setActiveColor("#1755BF"))

@@ -10,11 +10,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.bumptech.glide.Glide;
+import com.example.zhangbolun.jinjidebishe.instantmessage.TeacherContactFragment;
 import com.example.zhangbolun.jinjidebishe.teacher.dynamic.DynamicTeacherFragment;
 import com.example.zhangbolun.jinjidebishe.teacher.holiday.TeacherHolidayFragment;
 import com.example.zhangbolun.jinjidebishe.teacher.notification.TeacherNotificationFragment;
 import com.example.zhangbolun.jinjidebishe.teacher.checkon.TeacherCheckOnFragment;
 import com.example.zhangbolun.jinjidebishe.teacher.personal_information.TeacherPersonalInformationActivity;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class TeacherActivity extends AppCompatActivity{
     private String TAG="TeacherActiviy";
@@ -50,6 +54,9 @@ public class TeacherActivity extends AppCompatActivity{
                         Intent intent=new Intent(TeacherActivity.this, TeacherPersonalInformationActivity.class);
                         intent.putExtra("teacherId",getCurrentUser());
                         startActivity(intent);
+                        break;
+                    case R.id.teacher_im:
+                        replaceFragment(new TeacherContactFragment());
                         break;
 
                 }
