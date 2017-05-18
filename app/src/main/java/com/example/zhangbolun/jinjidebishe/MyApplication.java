@@ -22,6 +22,6 @@ public class MyApplication extends Application {
         EMOptions emp=new EMOptions();
         emp.setAutoLogin(false);
         EaseUI.getInstance().init(this,emp);
-        EMClient.getInstance().setDebugMode(true);
+        //EMClient.getInstance().setDebugMode(true);
     }
 }

@@ -64,7 +64,7 @@ public class OtheruserCheckOnReceiverFragment extends Fragment {
     @BindView(R.id.fragment_otheruser_checkon_receiver_in)Button inButton;
     @BindView(R.id.fragment_otheruser_checkon_receiver_out)Button outButton;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        SDKInitializer.initialize(getActivity().getApplicationContext());
+        SDKInitializer.initialize(getActivity().getApplication());
         View view=inflater.inflate(R.layout.fragment_otheruser_checkon_receiver,container,false);
         mLocationClient=new LocationClient(getActivity().getApplicationContext());
         mLocationClient.registerLocationListener(new MyLocationListener());
