@@ -19,6 +19,7 @@ import com.example.zhangbolun.jinjidebishe.instantmessage.OtheruserContactFragme
 import com.example.zhangbolun.jinjidebishe.otheruser.checkon.OtheruserCheckOnReceiverFragment1;
 import com.example.zhangbolun.jinjidebishe.otheruser.checkon.OtheruserCheckonFragment;
 import com.example.zhangbolun.jinjidebishe.otheruser.dynamic.DynamicOtheruserFragment;
+import com.example.zhangbolun.jinjidebishe.otheruser.file.OtheruserGetFileFragment;
 import com.example.zhangbolun.jinjidebishe.otheruser.holiday.OtheruserHolidayParnetFragment;
 import com.example.zhangbolun.jinjidebishe.otheruser.holiday.OtheruserHolidayStudentContainer;
 import com.example.zhangbolun.jinjidebishe.otheruser.notification.OtheruserNotificationFragment;
@@ -88,6 +89,8 @@ public class OtherUsersActivity extends AppCompatActivity {
                     case R.id.otheruser_im:
                         replaceFragment(new OtheruserContactFragment());
                         break;
+                    case R.id.otheruser_document:
+                        replaceFragment(new OtheruserGetFileFragment());
                     default:
                         break;
                 }
