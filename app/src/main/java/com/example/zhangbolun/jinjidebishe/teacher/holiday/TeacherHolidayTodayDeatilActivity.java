@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.zhangbolun.jinjidebishe.R;
 
@@ -97,6 +98,12 @@ public class TeacherHolidayTodayDeatilActivity extends AppCompatActivity {
                             if(response.isSuccessful()){
                                 btn_agree.setClickable(false);
                                 btn_refuse.setClickable(false);
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(TeacherHolidayTodayDeatilActivity.this, "确认请假条成功，准假", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
                             }
                         }catch(Exception e){
                             e.printStackTrace();
@@ -122,6 +129,12 @@ public class TeacherHolidayTodayDeatilActivity extends AppCompatActivity {
                             if(response.isSuccessful()){
                                 btn_agree.setClickable(false);
                                 btn_refuse.setClickable(false);
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(TeacherHolidayTodayDeatilActivity.this, "确认请假条成功，拒绝准假", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
                             }
                         }catch(Exception e){
                             e.printStackTrace();

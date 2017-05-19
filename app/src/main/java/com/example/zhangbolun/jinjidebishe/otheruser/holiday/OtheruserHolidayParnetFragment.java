@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.zhangbolun.jinjidebishe.OtherUsersActivity;
 import com.example.zhangbolun.jinjidebishe.R;
@@ -91,6 +92,12 @@ public class OtheruserHolidayParnetFragment extends Fragment {
                             if (response.isSuccessful()) {
                                 btn_refuse.setClickable(false);
                                 btn_agree.setClickable(false);
+                                getActivity().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(otherUsersActivity, "今日请假条签字成功，确认请假", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
                             }
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -115,6 +122,12 @@ public class OtheruserHolidayParnetFragment extends Fragment {
                             if (response.isSuccessful()) {
                                 btn_refuse.setClickable(false);
                                 btn_agree.setClickable(false);
+                                getActivity().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(otherUsersActivity, "今日请假条签字成功，拒绝请假", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
                             }
                         } catch (Exception e) {
                             e.printStackTrace();
