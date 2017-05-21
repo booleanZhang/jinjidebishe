@@ -13,7 +13,9 @@ import android.view.MenuItem;
 import com.bumptech.glide.Glide;
 import com.example.zhangbolun.jinjidebishe.instantmessage.TeacherContactFragment;
 import com.example.zhangbolun.jinjidebishe.teacher.dynamic.DynamicTeacherFragment;
+import com.example.zhangbolun.jinjidebishe.teacher.file.TeacherFileOperationFragment;
 import com.example.zhangbolun.jinjidebishe.teacher.file.TeacherGetFileFragment;
+import com.example.zhangbolun.jinjidebishe.teacher.gradeInput.GradeInputFragment;
 import com.example.zhangbolun.jinjidebishe.teacher.holiday.TeacherHolidayFragment;
 import com.example.zhangbolun.jinjidebishe.teacher.notification.TeacherNotificationFragment;
 import com.example.zhangbolun.jinjidebishe.teacher.checkon.TeacherCheckOnFragment;
@@ -60,7 +62,10 @@ public class TeacherActivity extends AppCompatActivity{
                         replaceFragment(new TeacherContactFragment());
                         break;
                     case R.id.teacher_document:
-                        replaceFragment(new TeacherGetFileFragment());
+                        replaceFragment(new TeacherFileOperationFragment());
+                        break;
+                    case R.id.teacher_grade_input:
+                        replaceFragment(new GradeInputFragment());
                         break;
 
                 }

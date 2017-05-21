@@ -3,6 +3,7 @@ package com.example.zhangbolun.jinjidebishe.otheruser.file;
 import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,7 @@ import java.util.List;
 public class FileAdapter extends RecyclerView.Adapter<FileAdapter.ViewHolder> {
     private Context mContext;
     private List<FileItem> mFileItemList;
+    private String TAG="文件下载";
 
     static class ViewHolder extends RecyclerView.ViewHolder{
         CardView cardView;

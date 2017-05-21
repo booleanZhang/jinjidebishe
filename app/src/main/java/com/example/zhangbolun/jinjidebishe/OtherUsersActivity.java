@@ -91,6 +91,9 @@ public class OtherUsersActivity extends AppCompatActivity {
                         break;
                     case R.id.otheruser_document:
                         replaceFragment(new OtheruserGetFileFragment());
+                        break;
+                    case R.id.otheruser_grade:
+                        break;
                     default:
                         break;
                 }

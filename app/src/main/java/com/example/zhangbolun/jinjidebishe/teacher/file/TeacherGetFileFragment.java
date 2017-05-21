@@ -57,13 +57,8 @@ public class TeacherGetFileFragment extends Fragment {
         mDrawerLayout=(DrawerLayout)getActivity().findViewById(R.id.teacher_drawer);
         GridLayoutManager layoutManager=new GridLayoutManager(getContext(),1);
         recyclerView.setLayoutManager(layoutManager);
-        setHasOptionsMenu(true);
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
         toolbar.setTitle("文件列表");
-        ActionBar actionBar=((AppCompatActivity) getActivity()).getSupportActionBar();
-        if(actionBar!=null){
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
 
         init();
 
@@ -136,7 +131,7 @@ public class TeacherGetFileFragment extends Fragment {
                         Gson gson=new Gson();
                         fileItemList=gson.fromJson(responseData,new TypeToken<List<FileItem>>(){}.getType());
                         adapter=new FileAdapter(fileItemList);
-                        getActivity().runOnUiThread(new Runnable() {
+                        getParentFragment().getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
                                 recyclerView.setAdapter(adapter);
@@ -148,14 +143,5 @@ public class TeacherGetFileFragment extends Fragment {
                 }
             }
         }).start();
-    }
-
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()){
-            case android.R.id.home:
-                mDrawerLayout.openDrawer(GravityCompat.START);
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 }

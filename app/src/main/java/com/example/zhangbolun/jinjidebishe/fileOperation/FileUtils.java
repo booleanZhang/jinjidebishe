@@ -11,6 +11,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 import android.os.Environment;
+import android.util.Log;
 
 /**
  * 将数据保存在sd卡上
@@ -18,6 +19,7 @@ import android.os.Environment;
 
 public class FileUtils {
     private String SDPATH;
+    private String TAG="文件保存到手机:";
 
     public String getSDPATH() {
         return SDPATH;
@@ -26,6 +28,7 @@ public class FileUtils {
         //得到当前外部存储设备的目录
         // /SDCARD
         SDPATH = Environment.getExternalStorageDirectory() + "/";
+//        Log.d(TAG, "FileUtils: "+SDPATH);
     }
     /**
      * 在SD卡上创建文件
@@ -64,6 +67,7 @@ public class FileUtils {
         File file = null;
         OutputStream output = null;
         try{
+//            Log.d(TAG, "write2SDFromInput: "+path+fileName);
             creatSDDir(path);
             file = creatSDFile(path + fileName);
             output = new FileOutputStream(file);

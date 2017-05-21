@@ -10,8 +10,8 @@
             android:id="@+id/teacher_holiday"
             android:title="请假条"/>
         <item
-            android:id="@+id/teacher_nav_item4"
-            android:title="item4"/>
+            android:id="@+id/teacher_grade_input"
+            android:title="学生成绩批量录入"/>
         <item
             android:id="@+id/teacher_dynamic"
             android:title="班级圈/校园圈"/>
@@ -20,7 +20,7 @@
             android:title="即时聊天"/>
         <item
             android:id="@+id/teacher_document"
-            android:title="文件下载"/>
+            android:title="文件下载/上传"/>
         <item
             android:id="@+id/teacher_personal_information"
             android:title="个人信息管理"/>

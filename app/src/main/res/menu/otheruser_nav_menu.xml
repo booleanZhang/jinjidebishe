@@ -10,8 +10,8 @@
             android:id="@+id/otheruser_holiday"
             android:title="请假条"/>
         <item
-            android:id="@+id/otheruser_nav_item4"
-            android:title="item4"/>
+            android:id="@+id/otheruser_grade"
+            android:title="学生学习情况查看"/>
         <item
             android:id="@+id/otheruser_dynamic"
             android:title="班级圈/校园圈"/>

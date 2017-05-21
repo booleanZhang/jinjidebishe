@@ -62,7 +62,7 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.ViewHolder>{
                         httpDownloader.downfile(fileItem.getPosition(),"家校通下载的文件/",fileItem.getSender()+fileItem.getName());
                     }
                 }).start();
-                Toast.makeText(mContext, "已经将文件保存到:家校通下载的文件夹下。文件名为:"+fileItem.getId()+fileItem.getSender()+fileItem.getName(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "已经将文件保存到:家校通下载的文件夹下。文件名为:"+fileItem.getSender()+fileItem.getName(), Toast.LENGTH_SHORT).show();
             }
         });
         return holder;

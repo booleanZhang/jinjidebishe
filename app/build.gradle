@@ -24,8 +24,9 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-//    compile files('libs/hyphenatechat_3.3.0.jar')
+    //    compile files('libs/hyphenatechat_3.3.0.jar')
     compile project(path: ':easeUI_CN')
+    compile files('libs/jxl-2.6.jar')
     compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.ashokvarma.android:bottom-navigation-bar:1.4.1'

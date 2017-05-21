@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zhangbolun.jinjidebishe.teacher.file.TeacherUploadFileFragment">
+
+    <!-- TODO: 教师上传文件 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="指定目录(文件夹)" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/fragment_teacher_upload_file_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="请在这里输入文件夹的名字否则将使用默认文件夹(家校通要上传的文件)"/>
+        <Button
+            android:id="@+id/fragment_teacher_upload_file_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:text="选择"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="点击文件名就可以上传文件了"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/fragment_teacher_upload_file_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
