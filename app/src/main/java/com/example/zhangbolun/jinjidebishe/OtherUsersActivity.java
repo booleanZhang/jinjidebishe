@@ -20,6 +20,7 @@ import com.example.zhangbolun.jinjidebishe.otheruser.checkon.OtheruserCheckOnRec
 import com.example.zhangbolun.jinjidebishe.otheruser.checkon.OtheruserCheckonFragment;
 import com.example.zhangbolun.jinjidebishe.otheruser.dynamic.DynamicOtheruserFragment;
 import com.example.zhangbolun.jinjidebishe.otheruser.file.OtheruserGetFileFragment;
+import com.example.zhangbolun.jinjidebishe.otheruser.grade.GradeFragment;
 import com.example.zhangbolun.jinjidebishe.otheruser.holiday.OtheruserHolidayParnetFragment;
 import com.example.zhangbolun.jinjidebishe.otheruser.holiday.OtheruserHolidayStudentContainer;
 import com.example.zhangbolun.jinjidebishe.otheruser.notification.OtheruserNotificationFragment;
@@ -93,6 +94,7 @@ public class OtherUsersActivity extends AppCompatActivity {
                         replaceFragment(new OtheruserGetFileFragment());
                         break;
                     case R.id.otheruser_grade:
+                        replaceFragment(new GradeFragment());
                         break;
                     default:
                         break;

@@ -113,7 +113,8 @@
         <activity android:name=".otheruser.dynamic.DynamicOtheruserPostActivity" />
         <activity android:name=".instantmessage.IMActivity" />
         <activity android:name=".instantmessage.OtheruserContactItemActivity" />
-        <activity android:name=".instantmessage.TeacherContactItemActivity"></activity>
+        <activity android:name=".instantmessage.TeacherContactItemActivity" />
+        <activity android:name=".otheruser.grade.GradeDetailActivity"></activity>
     </application>
 
 </manifest>
