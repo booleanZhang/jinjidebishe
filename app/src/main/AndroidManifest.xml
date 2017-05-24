@@ -114,7 +114,9 @@
         <activity android:name=".instantmessage.IMActivity" />
         <activity android:name=".instantmessage.OtheruserContactItemActivity" />
         <activity android:name=".instantmessage.TeacherContactItemActivity" />
-        <activity android:name=".otheruser.grade.GradeDetailActivity"></activity>
+        <activity android:name=".otheruser.grade.GradeDetailActivity" />
+        <activity android:name=".teacher.gradeInput.TeacherGradeInputActivity" />
+        <activity android:name=".teacher.gradeInput.TeacherGradeDetailActivity"></activity>
     </application>
 
 </manifest>

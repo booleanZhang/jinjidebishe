@@ -15,6 +15,7 @@ import com.example.zhangbolun.jinjidebishe.instantmessage.TeacherContactFragment
 import com.example.zhangbolun.jinjidebishe.teacher.dynamic.DynamicTeacherFragment;
 import com.example.zhangbolun.jinjidebishe.teacher.file.TeacherFileOperationFragment;
 import com.example.zhangbolun.jinjidebishe.teacher.file.TeacherGetFileFragment;
+import com.example.zhangbolun.jinjidebishe.teacher.gradeInput.GradeContainerFragment;
 import com.example.zhangbolun.jinjidebishe.teacher.gradeInput.GradeInputFragment;
 import com.example.zhangbolun.jinjidebishe.teacher.holiday.TeacherHolidayFragment;
 import com.example.zhangbolun.jinjidebishe.teacher.notification.TeacherNotificationFragment;
@@ -65,7 +66,7 @@ public class TeacherActivity extends AppCompatActivity{
                         replaceFragment(new TeacherFileOperationFragment());
                         break;
                     case R.id.teacher_grade_input:
-                        replaceFragment(new GradeInputFragment());
+                        replaceFragment(new GradeContainerFragment());
                         break;
 
                 }

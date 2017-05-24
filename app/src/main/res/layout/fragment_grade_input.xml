@@ -1,14 +1,17 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.zhangbolun.jinjidebishe.teacher.gradeInput.GradeInputFragment">
-
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/fragment_grade_input_text"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
-</FrameLayout>
+        android:layout_height="wrap_content"
+        android:text="请将excel文件放到手机内存的教师批量成绩录取文件夹下"
+        android:textSize="20sp"
+        android:textColor="#000000"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/fragment_grade_input_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

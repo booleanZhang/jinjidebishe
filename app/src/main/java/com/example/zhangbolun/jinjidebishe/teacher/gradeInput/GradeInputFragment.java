@@ -5,8 +5,16 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -32,65 +40,83 @@ import jxl.Workbook;
 import jxl.read.biff.BiffException;
 
 public class GradeInputFragment extends Fragment {
-    @BindView(R.id.fragment_grade_input_text)TextView textView;
+    @BindView(R.id.fragment_grade_input_recyclerview)RecyclerView recyclerView;
+    DrawerLayout mDrawerLayout;
 
     private String TAG="批量导入excel";
     
     private List<File> fileListReturn;
 
+    private GradeInputAdapter adapter;
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_grade_input, container, false);
         ButterKnife.bind(this,view);
+        mDrawerLayout=(DrawerLayout) getActivity().findViewById(R.id.teacher_drawer);
+        GridLayoutManager layoutManager=new GridLayoutManager(getContext(),1);
+        recyclerView.setLayoutManager(layoutManager);
         fileListReturn=new ArrayList<>();
-        new ImportDataFromExcel().importExcelData();
-        fileListReturn=getFilesFromDictionary("/storage/emulated/0/家校通下载的文件/");
-        Log.d(TAG, fileListReturn.toString());
-        
+        fileListReturn=getFilesFromDictionary("/storage/emulated/0/教师批量成绩录取/");
+        adapter=new GradeInputAdapter(fileListReturn);
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                recyclerView.setAdapter(adapter);
+            }
+        });
+
         return view;
     }
 
-    public class ImportDataFromExcel {
-        //将excel文件导入到内存中
-        private List<ExcelItem> datas; //需要一个对应excel表中列的类，同recyclerView的Item类一样  2333
-        public String importExcelData(){
-            datas = new ArrayList<>();
-            Workbook workbook = null;
-            String fileName ="1304103test.xls";
-            try {
-                Log.d(TAG, Environment.getExternalStorageDirectory()+"/家校通下载的文件/"+fileName);
-                workbook = Workbook.getWorkbook(new File(Environment.getExternalStorageDirectory()+"/家校通下载的文件/"+fileName));
-                Sheet sheet = workbook.getSheet(0);
-                int rows = sheet.getRows();
-                int columns = sheet.getColumns();
-                //遍历excel文件的每行每列
-                for (int i=0; i < rows ;i++){
-                    //遍历行
-                    List<String> li = new ArrayList<>();
-                    for (int j = 0 ; j < columns ; j++ ){
-                        Cell cell = sheet.getCell(j,i);
-                        String result = cell.getContents();
-                        if (i!=0){
-                            li.add(result);
-                        }
-                    }
-                    if (li.size()>0){
-                        datas.add(new ExcelItem(li.get(0),li.get(1)));
-                    }
-                    li=null;
-                }
-                Gson gson = new Gson();
-                Log.d(TAG, gson.toJson(datas));
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (BiffException e) {
-                e.printStackTrace();
-            }
-            return "error";
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case android.R.id.home:
+                mDrawerLayout.openDrawer(GravityCompat.START);
         }
+        return super.onOptionsItemSelected(item);
     }
+
+//    public class ImportDataFromExcel {
+//        //将excel文件导入到内存中
+//        private List<ExcelItem> datas; //需要一个对应excel表中列的类，同recyclerView的Item类一样  2333
+//        public String importExcelData(){
+//            datas = new ArrayList<>();
+//            Workbook workbook = null;
+//            String fileName ="1304103test.xls";
+//            try {
+//                Log.d(TAG, Environment.getExternalStorageDirectory()+"/家校通下载的文件/"+fileName);
+//                workbook = Workbook.getWorkbook(new File(Environment.getExternalStorageDirectory()+"/家校通下载的文件/"+fileName));
+//                Sheet sheet = workbook.getSheet(0);
+//                int rows = sheet.getRows();
+//                int columns = sheet.getColumns();
+//                //遍历excel文件的每行每列
+//                for (int i=0; i < rows ;i++){
+//                    //遍历行
+//                    List<String> li = new ArrayList<>();
+//                    for (int j = 0 ; j < columns ; j++ ){
+//                        Cell cell = sheet.getCell(j,i);
+//                        String result = cell.getContents();
+//                        if (i!=0){
+//                            li.add(result);
+//                        }
+//                    }
+//                    if (li.size()>0){
+//                        datas.add(new ExcelItem(li.get(0),li.get(1)));
+//                    }
+//                    li=null;
+//                }
+//                Gson gson = new Gson();
+//                Log.d(TAG, gson.toJson(datas));
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            } catch (BiffException e) {
+//                e.printStackTrace();
+//            }
+//            return "error";
+//        }
+//    }
 
 
     /**
